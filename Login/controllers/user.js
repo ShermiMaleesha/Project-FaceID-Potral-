@@ -22,3 +22,9 @@ module.exports.upload = function(req, res, next){
   //message="successfully uploaded"
  res.render('upload_document.ejs');
 };
+
+module.exports.login = function(req, res, next){
+  //message="successfully uploaded"
+ res.render('login.ejs');
+};
+

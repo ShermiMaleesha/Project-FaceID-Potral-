@@ -3,7 +3,7 @@ var express=require("express");
 var connection = require('./../config');
 // cryptr = new Cryptr('myTotalySecretKey');
 
-module.exports.register=function(req,res){
+module.exports.feedtdata=function(req,res){
 
     var users={
         "age_group":"30-40",

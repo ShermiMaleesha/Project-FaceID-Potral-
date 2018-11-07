@@ -4,7 +4,7 @@ var connection = require('./config');
 var app = express();
 var req = require('request');
 var res = require('response');
-var multer = require('multer');
+//var multer = require('multer');
 /*var upload = multer({
   dest: 'uploads/' // this saves your file into a directory called "uploads"
 });*/
@@ -12,7 +12,7 @@ var multer = require('multer');
 
 var authenticateController=require('./controllers/authenticate-controller');
 var registerdetailsController=require('./controllers/register-controller');
-var registerController=require('./controllers/feed_tissue_data-controller');
+var feedtissuedataController=require('./controllers/feed_tissue_data-controller');
 var uploadController=require('./controllers/upload_documents-controller');
 var user = require('./controllers/user');
 
@@ -49,8 +49,11 @@ app.get('/', function(req, res) {
 /* route to handle controllers */
 app.post('/controllers/register-controller', registerdetailsController.register);
 app.post('/controllers/authenticate-controller', authenticateController.authenticate);
-app.post('/controllers/feed_tissue_data-controller', registerController.register);
+app.post('/controllers/feed_tissue_data-controller', feedtissuedataController.feedtdata);
 app.post('/controllers/upload_documents-controller', uploadController.upload);
+/*route to handle user login*/
+app.post('/login', user.login);
+app.get('/login', user.login);
 /*route to handle user registration*/
 app.post('/register', user.register);
 app.get('/register', user.register);
